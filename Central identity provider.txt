@@ -1,0 +1,27 @@
+Central identity provider = Authorization Server = Security Token Service
+
+Examples - Duende.IdentiyServer, AAD, Ping, Okta/Auth0, etc. (they implement OAuth2 standard)
+
+Why?
+User accounts are reused across applications
+Identity and access-management related tasks are common concerns
+Safely storing account-related information is prone to change
+Means of authentication are added or changed 
+Active Directory - example of IP
+
+Access tokens OAuth2 defines should only be used to access resources, the API.
+They should not be used to sign into a client app.
+They weren't created with that scenario in mind.
+There comes the OpenID Connect - identity layer on top of OAuth2 protocol
+It extends OAuth2 - an app can recieve identity token next to an access token if it needs one.
+Identity token can then be used to sign into a client app. That same app can use the 
+access token to access the API.
+DIfferent clients can get tokens in a secure way in different manner.
+That's why we call above-mentioned services Identity Providers
+
+OpenID Connect is the superior protocol - it extends and supersedes OAuth2.
+
+In essence, when dealing with users, we should be working with OpenID Connect.
+Even when we only want to access an API and don't want to login into the client app. /
+
+OIDC 	isn't just for new or API-based apps.
