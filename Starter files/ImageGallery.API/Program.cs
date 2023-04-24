@@ -17,7 +17,7 @@ builder.Services.AddDbContext<GalleryContext>(options =>
 
 // register the repository
 builder.Services.AddScoped<IGalleryRepository, GalleryRepository>();
-
+ 
 // register AutoMapper-related services
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
